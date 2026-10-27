@@ -1,4 +1,4 @@
-install.packages(c("rentrez", "ggplot2"))
+#install.packages(c("rentrez", "ggplot2"))
 library(rentrez)
 library(ggplot2)
 
@@ -93,13 +93,14 @@ if (!is.na(position) && position >= 1 && position <= protein_length) {
     geom_point(aes(x = position, y = 0), size = 4) +
     annotate("text", x = position, y = 0.25, label = variant_protein, size = 4) +
     xlim(0, protein_length) + ylim(-0.6, 0.6) +
-    theme_void() +
+        theme_void() + theme(plot.background = element_rect(fill = "white", color = NA)) +
     labs(title = paste(gene_symbol, "reference protein"),
          x = "Amino-acid position") +
     theme(axis.title.x = element_text())
   print(fig2)
-  ggsave("figures/02_variant_position.png", fig2,
-         width = 8, height = 2.5, dpi = 300)
+    ggsave("figures/02_variant_position.png", fig2,
+                  width = 8, height = 2.5, dpi = 300, bg = "white")
+         
 }
 
 writeLines(capture.output(sessionInfo()), "results/session_info.txt")

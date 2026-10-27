@@ -1,0 +1,4 @@
+Gene symbol: TNNC1
+NCBI Gene ID: 7134
+Official name: troponin C1, slow skeletal and cardiac type
+Chromosome: 3
